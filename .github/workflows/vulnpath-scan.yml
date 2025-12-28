@@ -1,0 +1,22 @@
+name: VulnPath Security Scan
+
+on:
+  pull_request:
+    paths:
+      - 'package.json'
+      - 'composer.json'
+      - 'src/**'
+      - 'tests/**'
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run VulnPath Scan
+        uses: ./ 
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          fail-on-vulnerability: true

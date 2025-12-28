@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+# Note: For GitHub Actions, dist/ must be pushed to the repo for the action to work.
+# If you plan to build dist/ on the fly in a CI step, you can uncomment the line below.
+# dist/
+
+# Testing
+coverage/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Future Roadmap
+ROADMAP.md
+how-to-deploy.md
+

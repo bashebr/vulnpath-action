@@ -1,0 +1,6 @@
+{
+    "name": "php-fixture",
+    "require": {
+        "guzzlehttp/guzzle": "7.4.5"
+    }
+}

@@ -1,0 +1,30 @@
+name: 'VulnPath - Package Usage Security Scanner'
+description: 'Know if vulnerable packages are actually used in your code (JS/TS and PHP)'
+author: 'VulnPath'
+branding:
+  icon: 'shield'
+  color: 'purple'
+
+inputs:
+  github-token:
+    description: 'GitHub token for posting comments'
+    required: true
+    default: ${{ github.token }}
+  fail-on-vulnerability:
+    description: 'Fail the action if used vulnerable packages are found'
+    required: false
+    default: 'true'
+  exclude-dev-dependencies:
+    description: 'Exclude devDependencies from the scan'
+    required: false
+    default: 'false'
+
+outputs:
+  vulnerabilities-found:
+    description: 'Total number of vulnerabilities found'
+  critical-count:
+    description: 'Number of vulnerable packages that are actively used'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
